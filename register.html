@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style1.css">
+
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" name="myForm" onsubmit="return validateForm()">
+            <div class="card">
+                <ion-icon name="people-outline"></ion-icon>
+                <center>
+                    <h1>Registration</h1>
+                </center>
+                <div class="insidebox">
+                    <div class="box">
+                        <input type="text" name="username">
+                        <label placeholder="Username"></label>
+                    </div>
+
+                    <div class="box">
+                        <input type="email" name="email">
+                        <label placeholder="Email"></label>
+                    </div>
+                    <div class="box">
+                        <input type="password" name="password">
+                        <label placeholder="Password"></label>
+                    </div>
+                    <div class="box">
+                        <input type="text" name="address">
+                        <label placeholder="Address"></label>
+
+                    </div>
+                    <div class="box">
+                        <input type="text" name="aadhar">
+                        <label placeholder="Aadhar No."></label>
+                    </div>
+                    <div class="button">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="register.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputs = document.querySelectorAll('.card .insidebox .box input');
+
+            inputs.forEach(function (input) {
+                const label = input.nextElementSibling;
+
+                // Initially check for existing value or placeholder
+                if (input.value.trim() !== '' || !input.placeholderShown) {
+                    label.classList.add('focused');
+                    label.style.transform = 'translate(0, -1.5em) scale(0.9, 0.9)';
+                }
+
+                input.addEventListener('input', function () {
+                    label.classList.add('focused');
+                });
+
+                input.addEventListener('focus', function () {
+                    label.classList.add('focused');
+                });
+
+                input.addEventListener('blur', function () {
+                    if (this.value === '' && input.placeholderShown) {
+                        label.classList.remove('focused');
+                        label.style.transform = 'translate(0, 0) scale(1, 1)';
+                    }
+                });
+
+                input.addEventListener('focusout', function () {
+                    if (this.value.trim() !== '' || !input.placeholderShown) {
+                        label.style.transform = 'translate(0, -1.5em) scale(0.9, 0.9)';
+                    }
+                });
+            });
+        });
+
+    </script>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["username"].value;
+            var y = document.forms["myForm"]["email"].value;
+            var z = document.forms["myForm"]["password"].value;
+            var w = document.forms["myForm"]["address"].value;
+            var s = document.forms["myForm"]["aadhar"].value;
+            var aadhar = /^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/;
+            if (x == "" || y == "" || z == "" || w == "" || !aadhar.test(s) || s == "") {
+                alert("Please fill in all fields correctly");
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector('.container form');
+            const popup = document.getElementById("popup");
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                if (validateForm()) {
+                    // Get form data
+                    const formData = {
+                        username: form.username.value,
+                        email: form.email.value,
+                        password: form.password.value,
+                        aadharNo: form.aadhar.value,
+                        address: form.address.value
+                    };
+
+                    // Make a POST request
+                    fetch('http://localhost:6700/api/v1/customers', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData),
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                swal({
+                                    title: "Failed",
+                                    text: "Email or Aadhar is already present",
+                                    type: "error",
+                                    confirmButtonText: "Cool"
+                                });
+
+                            }
+                            else{
+                                showPopup();
+                            }
+                            return response.json();
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                            
+                        });
+                }
+            });
+
+
+            function showPopup() {
+            swal({
+                title: "Registered!",
+                text: "Details Saved successfully",
+                type: "success",
+                closeOnClickOutside: false
+            });
+
+            // Redirect to index.html after a short delay
+            setTimeout(function () {
+                window.location.href = "login.html";
+            }, 1500); // Adjust the delay as needed
+        }
+
+            // ... (your existing functions for showing/closing the popup)
+        });
+
+    </script> -->
+</body>
+
+</html>

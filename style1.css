@@ -1,0 +1,152 @@
+body{
+    background-color: rgb(54, 84, 134);
+}
+.card{
+    position: absolute;
+    background-color: white;
+    -webkit-box-shadow: 0 0 5px 6px rgb(127, 199, 217);
+    border-radius: 5px;
+    height: 672px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.card .insidebox{
+    margin-left: 160px;
+    display: flex;
+    flex-direction: column;
+    margin-top: -52px;
+    
+}
+.card .insidebox .box{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.card .insidebox .box input{
+    border: none;
+    border-bottom: 1px solid black;
+    width:420px;
+    outline: none;
+    margin-left:-99px;
+    margin-top: 14px;
+}
+
+.card .insidebox .box label{
+    margin-left: -99px;
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.container .card ion-icon{
+    width: 505px;
+    height: 37px;
+    margin-top: 8px;
+}
+.insidebox .button{
+    margin-left: 33px;
+    margin-top: 19px;
+}
+
+.insidebox button{
+    height: 41px;
+    width: 124px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: rgb(54, 84, 134);
+    transition: transform 0.2s;
+    letter-spacing: 5px;
+    overflow: hidden;
+    transition: .5s;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+}
+.insidebox button:hover{
+    background: rgb(54, 84, 134);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(54, 84, 134),
+              0 0 25px rgb(54, 84, 134),
+              0 0 50px rgb(54, 84, 134),
+              0 0 100px rgb(54, 84, 134);
+}
+
+.card .insidebox .box input[type="text"],
+.card .insidebox .box input[type="email"],
+.card .insidebox .box input[type="password"]{
+    width: 100%;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+}
+.card .insidebox .box input[type="text"]+label,
+.card .insidebox .box input[type="email"]+label,
+.card .insidebox .box input[type="password"]+label{
+    margin-top: -1.2em;
+    font-size: 1.5em;
+    display: block;
+    transform: translate(0, 0) scale(1, 1);
+}
+.card .insidebox .box input[type="text"]+label:before,
+.card .insidebox .box input[type="email"]+label:before,
+.card .insidebox .box input[type="password"]+label:before{
+    content: attr(placeholder);
+    color: #287ae6;
+    display: inline-block;
+    transition: all .3s ease-in-out;
+}
+.card .insidebox .box input[type="text"]:focus,
+.card .insidebox .box input[type="email"]:focus,
+.card .insidebox .box input[type="password"]:focus{
+    border-color: #287ae6;
+}
+.card .insidebox .box input[type="text"]:focus+label,
+.card .insidebox .box input[type="email"]:focus+label,
+.card .insidebox .box input[type="password"]:focus+label{
+    font-size: 1.1em;
+    color: #287ae6;
+    transform: translate(0,-1.5em) scale(0.9,0.9);
+}
+
+.popup{
+    transform: scale(0.5);
+    visibility: hidden;
+    transition: transform 0.4s ,top 0.4s;
+ }
+ .open-popup{
+     /* top:100px; */
+     visibility: visible;
+     transform: scale(1);
+ }
+ .popup .card{
+     height:415px;
+     width: 474px;
+     background-color: white;
+     margin-left: -1px;
+     margin-top: 323px;
+ }
+ .card .image img{
+     margin-top: -94px;
+     margin-left: 106px;
+ }
+ .card .content p{
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 20px;
+     text-align: center;
+ }
+ .card .buttonf button{
+     height: 60px;
+     width: 406px;
+     color: black;
+     background-color: green;
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 28px;
+     margin-top: 20px;
+     margin-left: 30px;
+     border: none;
+ }
+ .card .buttonf button:hover{
+     cursor: pointer;
+ }
